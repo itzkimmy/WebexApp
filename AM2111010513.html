@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webex Web Application</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="mainInterface">
+        <div class="title">Webex Web Application</div>
+
+            <div class="personalinfo" id = "personalinfo"></div>
+            <div class="getpersonalinfo" id = "getpersonalinfo">Get Personal Info</div>
+            <div class="next" id = "next">Next</div>
+            <div class="exit" id = "exit">Exit</div>
+            
+            <div class="message" id = "message">
+                <form id="formid">
+
+                    Enter Room ID :
+                    <div>
+                        <input type = "password" id = "roomid" placeholder = "room ID required">
+                    </div>
+                    Enter Message :
+                    <div>
+                        <textarea name = "" id = "messagetext" cols="67" rows="7"></textarea>
+                    </div>
+                    <div>
+                        <button type = "submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="room" id="room">
+                <form id="createroom">
+                    <b><u>CREATE A ROOM</u></b>
+                    <br><br>
+                    Enter Room Name:
+                    <div>
+                        <input type="text" id="roomName">
+                    </div>
+                    <div>
+                        <button type = "submit" id = "create">Create</button>
+                    </div>
+                </form>
+            </div>
+            <div class="invite" id="invite">
+                <form id="inviteppl">
+                    <b><u>INVITE PEOPLE</u></b>
+                    <br><br>
+                    Enter Room ID:
+                    <div>
+                        <input type="password" id="roomid2" placeholder="Room ID required">
+                    </div>
+                    <div>
+                        Enter Person Email :
+                    </div>
+                    <div>
+                        <input type="email" id="emailid">
+                    </div>
+                    <div>
+                        <button type="submit">Invite</button>
+                    </div>
+                </form>
+            </div>
+            <div class="member" id="member"></div>
+            <div class="listmember" id="listmember">
+                <b><u>LIST MEMBERS</u></b>
+                <br>
+                Enter Room ID:
+                <div>
+                    <input type="password" id="roomid3" placeholder="Room ID required">
+                </div>
+            </div>
+            <div class="getmember" id="getmember">Get List Member</div>
+            <div class = "roomlist" id = "roomlist"></div>
+            <div class = "getroomsbutton" id = "getroomsbutton">Get Rooms List</div>
+            <div class="back" id = "back">Back</div>
+
+            <div class = "base">
+                <div class = "webexsmall">
+                    <a href = "index.html">
+                    <img src = "webexsmall.png" width = "30" height = "30">
+                    </a>
+                </div>
+                </div>
+                <div class = "darkoverlay" id = "darkoverlay">
+                    <div class = "webexlogo" id = "webexlogo">
+                        <img src = "webex.png" width = "150" height = "150">
+                    </div>
+                    <div class = "accesstokenlabel" id = "accesstokenlabel">
+                        Access Token
+                        <span class = "infoicon">
+                            <img src ="info.png" width = "11" height = "11">
+                            <div class="help-text">This is the access token that is required to access the Webex API.</div>
+                            <script>
+                            let infoicon = document.querySelector('.infoicon');
+                            let helpText = document.querySelector('.help-text');
+                            
+                            infoicon.addEventListener('mouseover', function() {
+                                helpText.style.display = "block";
+                                helpText.style.left = (infoicon.offsetLeft + infoicon.offsetWidth) + "px";
+                                helpText.style.top = (infoicon.offsetTop - helpText.offsetHeight / 2) + "px";
+                            });
+                            
+                            infoicon.addEventListener('mouseout', function() {
+                                helpText.style.display = "none";
+                            });
+                        </script>
+                        </span>
+                    </div>
+                </div>
+                <p>
+                    <input type="password" class="tokenfield" id="tokenfield" placeholder="token required...">
+                </p>
+                <div class="greenlogin" id = "greenlogin">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Login
+                </div>
+
+        </div>
+    </div>
+    <script src="personal.js"></script>
+    <script src="room.js"></script>
+    <script src="back.js"></script>
+</body>
+</html>
